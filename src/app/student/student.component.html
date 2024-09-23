@@ -1,0 +1,92 @@
+
+<div class="container">
+    <div align="right" class="mt-3">
+        <button mat-raised-button color="accent" routerLink="/student-list">Go to Student List</button>
+    </div>
+    <div class="card mt-3 p-5 text-center ">
+        
+
+        <form #studentForm="ngForm" (ngSubmit)="saveStudent(studentForm)">
+            <div class="mt-3 ">
+                <mat-form-field appearance="outline">
+                    <mat-label>Student Id</mat-label>
+                    <input matInput placeholder="Student Id" name="studentid" [(ngModel)]="student.studentid" disabled>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                </mat-form-field>
+            </div>
+
+            <div class="mt-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" name="name" [(ngModel)]="student.name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                </mat-form-field>
+            </div>
+
+
+
+            <div class="mt-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" name="username" [(ngModel)]="student.username">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>abc@123</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="mt-3">
+                <mat-form-field>
+                    <input matInput placeholder="Enter your password" type="password" name="password" [(ngModel)] = "student.password">
+                    <mat-icon matSuffix></mat-icon>
+                </mat-form-field>
+
+            </div>
+
+
+
+            <!-- <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+
+
+
+
+            <div class="mt-3">
+                <mat-radio-group>
+                    <mat-label>Gender</mat-label>
+                    <mat-radio-button value="1" [checked]="checkGender('M')" (click)="selectGender('M')" value="M">Male</mat-radio-button>
+                    <mat-radio-button value="2" [checked]="checkGender('F')" (click)="selectGender('F')" value="F">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+
+            <div class="mt-3">
+                <mat-form-field appearance="outline">
+                  <mat-label>Department</mat-label>
+                  <mat-select name="department" [(ngModel)]="student.department" required>
+                    <mat-option value="" disabled>Select Department</mat-option>
+                    <mat-option value="ECE">ECE</mat-option>
+                    <mat-option value="CSE">CSE</mat-option>
+                    <mat-option value="EEE">EEE</mat-option>
+                    <mat-option value="MECH">MECH</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+
+
+
+            <mat-divider></mat-divider>
+
+            <div class="p-3 mt-1 ">
+                
+                <button mat-raised-button color="primary" class="p-3 ml-3">Save</button>
+            </div>
+        </form>
+
+    </div>
+</div>
